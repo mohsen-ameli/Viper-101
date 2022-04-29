@@ -1,4 +1,4 @@
-public class BattleRoyal {
+public class Maps {
     /*
     Attributes
     */
@@ -11,7 +11,7 @@ public class BattleRoyal {
     /*
     Constructor
     */
-    public BattleRoyal(String weather, String location, double mapSize, int numPlayers, Boolean ranked) {
+    public Maps(String weather, String location, double mapSize, int numPlayers, Boolean ranked) {
         this.weather    = weather;
         this.location   = location;
         this.mapSize    = mapSize;
