@@ -1,5 +1,5 @@
 public class Arena {
-        /*
+    /*
     Attributes
     */
     private int round;
