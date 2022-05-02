@@ -8,16 +8,17 @@ public class Gun {
   private int weaponDamage;
   private int weaponAmmo;
   private String weaponName;
-  private String weaponrecoil;
+  private String weaponRecoil;
   private int weaponAccuracy;
+  private int accuracy;
   
 
-  public Gun(String name, int ammo, int damage, String recoil, int Acuracy ) {
+  public Gun(String name, int ammo, int damage, String recoil, int accuracy ) {
     name = weaponName;
     ammo = weaponAmmo;
     damage = weaponDamage;
-    recoil = weaponrecoil;
-    Accuracy = weaponAccuracy; 
+    recoil = weaponRecoil;
+    accuracy = weaponAccuracy; 
   }
 
   public String getWeaponName() {
@@ -30,11 +31,13 @@ public class Gun {
 
   public int getDamage() {
     return weaponDamage;
+  }
     
-  public String getrecoil() {
-    return weaponrecoil;
+  public String getRecoil() {
+    return weaponRecoil;
+  }
     
    public int getAccuracy() {
-    return weaponAccuracy;
+    return accuracy;
   }
 }
