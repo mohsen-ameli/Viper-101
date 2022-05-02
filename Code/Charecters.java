@@ -1,3 +1,10 @@
+/**
+ * Course: ICS4U1
+ * Date: Apr. 28th, 2022
+ * @author Arshia Akbaripour
+ */
+package Code;
+
 public class Charecters {
      /*
     Attributes
