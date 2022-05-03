@@ -38,6 +38,10 @@ public class Gun {
     /*
     Methods
     */
+    public void shoot () {
+        System.out.println("DIE!"); 
+        System.out.println(this.weaponDamage);
+    }
     public String toString() {
         String builder = "";
 

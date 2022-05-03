@@ -61,12 +61,6 @@ public class Charecters {
         System.out.printf("your Charecters used %f", this.skill);
         System.out.println(this.quote);
 
-    } 
-    
-    public void shoot () {
-
-        System.out.println("DIE!"); 
-        System.out.println(getDamage());
     }
 
     public void move () {
