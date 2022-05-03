@@ -2,6 +2,9 @@ public class BattleRoyal extends GameMode {
     /*
     Attributes
     */
+    private int obstacles;
+    private int numHouse;
+    private int numTree;
 
     /*
     Constructor

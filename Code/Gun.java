@@ -20,7 +20,7 @@ public class Gun {
   
     public Gun(String weaponName, int Ammo, int weaponDamage, String Recoil, int Accuracy ) {
         this.weaponName = weaponName;
-        this.weaponAmmo = Ammo;
+        this.Ammo = Ammo;
         this.weaponDamage = weaponDamage;
         this.Recoil = Recoil;
         this.Accuracy = Accuracy; 
