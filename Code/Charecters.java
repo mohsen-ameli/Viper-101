@@ -3,7 +3,7 @@
  * Date: Apr. 28th, 2022
  * @author Arshia Akbaripour
  */
-package Code;
+
 
 public class Charecters {
      /*

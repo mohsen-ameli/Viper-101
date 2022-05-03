@@ -3,7 +3,6 @@
  * Date: Apr. 25th, 2022
  * @author Arshia Akbaripour
  */
-package Code;
 
 public class Arena {
     /*
