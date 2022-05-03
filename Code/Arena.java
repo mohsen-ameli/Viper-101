@@ -4,43 +4,34 @@
  * @author Arshia Akbaripour
  */
 
-public class Arena {
+public class Arena extends GameMode {
     /*
     Attributes
     */
     private int round;
-    private double time;
-    private int numPlayers;
-    private boolean ranked;
 
     /*
     Constructor
     */
-    public Arena(int round, double time, int numPlayers, Boolean ranked) {
+    public Arena(int numPlayers, int round, double time, Boolean ranked, Map map) {
+        super(numPlayers, ranked, time);
+
         this.round   = round;
-        this.time    = time;
-        this.numPlayers = numPlayers;
-        this.ranked     = ranked;
     }
 
     /*
     Accessors
     */
     public int getRound() {return this.round;}
-    public double getTime() {return this.time;}
-    public int getNumPlayers() {return this.numPlayers;}
-    public boolean getRanked() {return this.ranked;}
 
     /*
     Methods
     */
+    @Override
     public String toString() {
-        String builder = "";
+        String builder = super.toString();
 
-        builder += "Time : " + this.time + ", ";
         builder += "Round : " + this.round + ", ";
-        builder += "Number of Players : " + this.numPlayers + ", ";
-        builder += "Ranked : " + this.ranked;
 
         return builder;
     }

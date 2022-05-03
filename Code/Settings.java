@@ -12,15 +12,30 @@ public class Settings {
     final int BACKWARD = 1;
     final int LEFT = 2;
     final int RIGHT = 3;
+    final int CROUCH = 4;
+    final int JUMP = 5;
+
+    private String [] controls = new String[6];
 
     /*
     Constructor
     */
-    public Settings(int graphics, double audio, double vSync, String language) {
-        this.graphics = graphics;
-        this.audio = audio;
-        this.vSync = vSync;
-        this.language = language;
+    public Settings(int graphics, double audio, double vSync, String language, boolean autoSprint) {
+        this.graphics   = graphics;
+        this.audio      = audio;
+        this.vSync      = vSync;
+        this.language   = language;
+        this.autoSprint = autoSprint;
+        setDefaultMovement();
+    }
+
+    private void setDefaultMovement() {
+        controls[FORWARD] = "W";
+        controls[BACKWARD] = "S";
+        controls[LEFT] = "A";
+        controls[RIGHT] = "S";
+        controls[CROUCH] = "Shift";
+        controls[JUMP] = "Space";
     }
 
     /*
@@ -30,6 +45,7 @@ public class Settings {
     public double getAudio() {return this.audio;}
     public double getVSync() {return this.vSync;}
     public String getLanguage() {return this.language;}
+    public boolean getAutoSprint() {return this.autoSprint;}
 
     /*
     Methods
@@ -43,7 +59,13 @@ public class Settings {
         this.language = language;    
     }
 
-    public void changeControls()
+    public void changeControls(String control, String key) {
+        for (int i = 0; i < this.controls.length; i++) {
+            if (this.controls[i] == control.toUpperCase()) {
+                this.controls[i] = key;
+            }
+        }
+    }
 
     public String toString() {
         String builder = "";
