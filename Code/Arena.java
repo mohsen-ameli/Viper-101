@@ -26,8 +26,15 @@ public class Arena extends GameMode {
 
     /*
     Methods
-    */
-    @Override
+
+    /**
+     * 
+     * @param 
+     */
+    public void getTime (double min) {
+        
+    }  
+
     public String toString() {
         String builder = super.toString();
 

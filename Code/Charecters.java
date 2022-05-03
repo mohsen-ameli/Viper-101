@@ -4,7 +4,6 @@
  * @author Arshia Akbaripour
  */
 
-
 public class Charecters {
      /*
     Attributes
@@ -39,6 +38,19 @@ public class Charecters {
     /*
     Methods
     */
+    public void heal () { 
+        if (this.health < 100 && this.health + 20 <= 100) { 
+            this.health = this.health + 20;
+            System.out.println("Wait a second! im healing");
+            System.out.printf("your health is restored to %f", this.health);
+        }
+    }  
+
+    public void useSkill () { 
+        System.out.println(this.skill);
+
+    }  
+
     public String toString() {
         String builder = "";
 

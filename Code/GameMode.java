@@ -25,6 +25,12 @@ public class GameMode {
     /*
     Methods
     */
+    public void rank () { // If player want to play ranked match or casual (turning ranked mode on and off)
+        if (this.ranked) {
+            this.ranked = false;
+        }
+    }  
+
     @Override
     public String toString() {
         String builder = "";
