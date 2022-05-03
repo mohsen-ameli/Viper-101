@@ -35,6 +35,20 @@ public class Arena {
     /*
     Methods
     */
+    public void rank () { // If player want to play ranked match or casual (turning ranked mode on and off)
+        if (this.ranked) {
+            this.ranked = false;
+        }
+    }  
+
+    /**
+     * 
+     * @param 
+     */
+    public void getTime (double min) {
+        
+    }  
+
     public String toString() {
         String builder = "";
 
