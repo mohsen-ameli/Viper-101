@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Map snowy = new Map("snowy", "Sweden", 10);
+        Map snowy = new Map("snowy", "Sweden", 10, -8);
 
         GameMode [] games = new GameMode[2];
 
