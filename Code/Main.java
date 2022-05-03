@@ -9,6 +9,7 @@ public class Main {
         BattleRoyal rankedBR = new BattleRoyal("Snowy", "Sweden", 10, 69, true);
         Arena rankedArena = new Arena(7, 5, 3, true);
         Map snowy = new Map("snowy", "Sweden", 10);
+        Map snowy = new Map("snowy", "Sweden", 10, -8);
 
         GameMode [] games = new GameMode[2];
 
