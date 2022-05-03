@@ -8,32 +8,35 @@ public class Charecters {
      /*
     Attributes
     */
-    private double health;
+    private int health;
     private String name;
     private String skill;
     private String sex;
-    private double armor;
+    private int armor;
+    private String quote;
 
     /*
     Constructor
     */
-    public Charecters(double health, String name, String skill, String sex, double armor) {
+    public Charecters(int health, String name, String skill, String sex, int armor, String quote) {
 
         this.health = health;
         this.name   = name;
         this.skill  = skill;
         this.sex    = sex;
         this.armor  = armor;
+        this.quote  = quote;
     }
 
     /*
     Accessors
     */
-    public double getHealth() {return this.health;}
+    public int getHealth() {return this.health;}
     public String getName() {return this.name;}
     public String getSkill() {return this.skill;}
     public String getSex() {return this.sex;}
-    public double getArmor() {return this.armor;}
+    public int getArmor() {return this.armor;}
+    public String getQuote() {return this.quote;}
 
     /*
     Methods
@@ -44,12 +47,27 @@ public class Charecters {
             System.out.println("Wait a second! im healing");
             System.out.printf("your health is restored to %f", this.health);
         }
-    }  
+    } 
+    
+    public void armoringUp () { 
+        if (this.armor < 50 && this.armor + 125 <= 50) { 
+            this.armor = this.armor + 25;
+            System.out.println("im shot! cover me im armoring up");
+            System.out.printf("your armor is restored to %f", this.armor);
+        }
+    } 
 
     public void useSkill () { 
-        System.out.println(this.skill);
+        System.out.printf("your Charecters used %f", this.skill);
+        System.out.println(this.quote);
 
-    }  
+    } 
+    
+    public void shoot () {
+
+        System.out.println("DIE!"); 
+        System.out.println(getDamage);
+    }
 
     public String toString() {
         String builder = "";
@@ -59,6 +77,7 @@ public class Charecters {
         builder += "Skill : " + this.skill + ", ";
         builder += "Sex : " + this.sex;
         builder += "Armor : " + this.armor;
+        builder += "Quote : " + this.quote;
 
         return builder;
     }
