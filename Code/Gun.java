@@ -5,21 +5,29 @@
  */
 
 public class Gun {
+   /*
+    Attributes
+    */
   private int weaponDamage;
   private int weaponAmmo;
   private String weaponName;
   private String weaponRecoil;
   private int weaponAccuracy;
-  private int accuracy;
+   
+   /*
+    Constructor
+    */
   
-
-  public Gun(String name, int ammo, int damage, String recoil, int accuracy ) {
-    name = weaponName;
-    ammo = weaponAmmo;
-    damage = weaponDamage;
-    recoil = weaponRecoil;
-    accuracy = weaponAccuracy; 
+  public Gun(String weaponName, int weaponAmmo, int weaponDamage, String weaponRecoil, int weaponAccuracy ) {
+    this.weaponname = weaponName;
+    this.weaponAmmo = weaponAmmo;
+    this.weaponDamage = weaponDamage;
+    this.weaponRecoil = weaponRecoil;
+    this.weaponAccuracy = weaponAccuracy; 
   }
+  /*
+    Accessors
+    */
 
   public String getWeaponName() {
     return weaponName;
@@ -38,6 +46,31 @@ public class Gun {
   }
     
    public int getAccuracy() {
-    return accuracy;
-  }
+    return weaponAccuracy;
+
+  /*
+    Methods
+    */
+    public String toString() {
+        String builder = "";
+
+        builder += "Weapon name : " + this.WeaponName + ", ";
+        builder += "Weapon ammo : " + this.weaponAmmo + ", ";
+        builder += "Weapon damage : " + this.weaponDamage + ", ";
+        builder += "Weapon recoil : " + this.weaponRecoil + ", ";
+        builder += "accuracy : " + this.accuracy;
+
+        return builder;
+
+    public class Main {
+      static void myMethod() {
+       
+       System.out.println("I just got executed!");
+      
+      }
+
+       public static void main(String[] args) {
+       myMethod();
+    }
 }
+  }

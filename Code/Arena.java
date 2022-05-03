@@ -17,7 +17,6 @@ public class Arena {
     Constructor
     */
     public Arena(int round, double time, int numPlayers, Boolean ranked) {
-
         this.round   = round;
         this.time    = time;
         this.numPlayers = numPlayers;
