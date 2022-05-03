@@ -66,7 +66,12 @@ public class Charecters {
     public void shoot () {
 
         System.out.println("DIE!"); 
-        System.out.println(getDamage);
+        System.out.println(getDamage());
+    }
+
+    public void move () {
+
+
     }
 
     public String toString() {
