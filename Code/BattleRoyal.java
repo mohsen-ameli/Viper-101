@@ -1,45 +1,31 @@
-public class BattleRoyal {
+public class BattleRoyal extends GameMode {
     /*
     Attributes
     */
-    private String weather;
-    private String location;
-    private double mapSize;
-    private int numPlayers;
-    private boolean ranked;
+    private int obstacles;
+    private int numHouse;
+    private int numTree;
 
     /*
     Constructor
     */
-    public BattleRoyal(String weather, String location, double mapSize, int numPlayers, Boolean ranked) {
-        this.weather    = weather;
-        this.location   = location;
-        this.mapSize    = mapSize;
-        this.numPlayers = numPlayers;
-        this.ranked     = ranked;
+    public BattleRoyal(int numPlayers, Boolean ranked, double time, Map map) {
+        super(numPlayers, ranked, time);
+        
     }
 
     /*
     Accessors
     */
-    public String getWeather() {return this.weather;}
-    public String getLocation() {return this.location;}
-    public double getMapSize() {return this.mapSize;}
-    public int getNumPlayers() {return this.numPlayers;}
-    public boolean getRanked() {return this.ranked;}
+    // public String getLocation() {return this.location;}
 
     /*
     Methods
     */
-    public String toString() {
-        String builder = "";
-
-        builder += "Weather : " + this.weather + ", ";
-        builder += "Location : " + this.location + ", ";
-        builder += "Map Size : " + this.mapSize + ", ";
-        builder += "Number of Players : " + this.numPlayers + ", ";
-        builder += "Ranked : " + this.ranked;
-
-        return builder;
-    }
+    // @Override
+    // public String toString() {
+    //     String builder = super.toString();
+    //     builder += "Weather : " + this.weather + ", ";
+    //     return builder;
+    // }
 }
