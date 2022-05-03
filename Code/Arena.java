@@ -1,3 +1,9 @@
+/**
+ * Course: ICS4U1
+ * Date: Apr. 25th, 2022
+ * @author Arshia Akbaripour
+ */
+
 public class Arena {
     /*
     Attributes
