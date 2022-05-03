@@ -9,31 +9,31 @@ public class Gun {
     Attributes
     */
     private int weaponDamage;
-    private int weaponAmmo;
+    private int Ammo;
     private String weaponName;
-    private String weaponRecoil;
-    private int weaponAccuracy;
+    private String Recoil;
+    private int Accuracy;
    
    /*
     Constructor
     */
   
-    public Gun(String weaponName, int weaponAmmo, int weaponDamage, String weaponRecoil, int weaponAccuracy ) {
+    public Gun(String weaponName, int Ammo, int weaponDamage, String Recoil, int Accuracy ) {
         this.weaponName = weaponName;
-        this.weaponAmmo = weaponAmmo;
+        this.weaponAmmo = Ammo;
         this.weaponDamage = weaponDamage;
-        this.weaponRecoil = weaponRecoil;
-        this.weaponAccuracy = weaponAccuracy; 
+        this.Recoil = Recoil;
+        this.Accuracy = Accuracy; 
     }
     /*
     Accessors
     */
 
     public String getWeaponName() {return weaponName;}
-    public int getAmmo() {return weaponAmmo;}
+    public int getAmmo() {return Ammo;}
     public int getDamage() {return weaponDamage;}
-    public String getRecoil() {return weaponRecoil;}
-    public int getAccuracy() {return weaponAccuracy;}
+    public String getRecoil() {return Recoil;}
+    public int getAccuracy() {return Accuracy;}
     
     /*
     Methods
@@ -42,10 +42,10 @@ public class Gun {
         String builder = "";
 
         builder += "Weapon name : " + this.weaponName + ", ";
-        builder += "Weapon ammo : " + this.weaponAmmo + ", ";
+        builder += "Weapon ammo : " + this.Ammo + ", ";
         builder += "Weapon damage : " + this.weaponDamage + ", ";
-        builder += "Weapon recoil : " + this.weaponRecoil + ", ";
-        builder += "accuracy : " + this.weaponAccuracy;
+        builder += "Weapon recoil : " + this.Recoil + ", ";
+        builder += "accuracy : " + this.Accuracy;
 
         return builder;
     }
