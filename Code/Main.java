@@ -16,8 +16,12 @@ public class Main {
 
         Settings setting = new Settings(4, 10, true, "ENG", true);
 
-        Shop mainShop = new Shop("", 0, "", "");
-        Gun AK47 = new Gun("AK47", 7.62, 6.9, "butt ton", 1);
+        Shop mainShop = new Shop("Edge of heaven", 0, "Forgiven Angel", "Angel");
+
+        Gun [] guns = new Gun[2];
+
+        guns[0] = new Gun("AK47", 7.62, 6.9, "butt ton", 1);
+        guns[1] = new Gun("M416", 5.56, 4.20, "lil bit", 5);
 
         Charecters [] chars = new Charecters[4];
 
@@ -39,7 +43,7 @@ public class Main {
         System.out.println("Hey there, please choose an option");
         do {
             try {
-                System.out.print("Type 1 to show character, 2 to show all maps and game modes available, 3 to view settings, 4 to go to shop, and 69 to exit : ");
+                System.out.print("Type 1 to show character, 2 to show all maps and game modes available, 3 to view settings, 4 to go to shop, 5 to shows guns, and 69 to exit : ");
                 System.out.println();
 
                 choice = in.nextInt();
@@ -55,7 +59,12 @@ public class Main {
                     System.out.println(setting.toString());
                 } else if (choice == 4) {
                     System.out.println(mainShop.toString());
-                } else if (choice == 69) {
+                } else if (choice == 5) {
+                    for (int i = 0; i < games.length; i++) {
+                        System.out.println(guns[i].toString());
+                    }
+                } 
+                else if (choice == 69) {
                     System.out.println("Bye for now lol");
                     exit = true;
                 } else {
@@ -71,11 +80,6 @@ public class Main {
             }   
         } while(!exit);
 
-
-        // System.out.println(games[0].toString());
-        // System.out.println();
-        // System.out.println(games[1].toString());
-
-        // System.out.println(AK47.toString());
+        in.close();
     }
 }
