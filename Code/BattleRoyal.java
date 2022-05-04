@@ -16,8 +16,8 @@ public class BattleRoyal extends GameMode {
     /*
     Constructor
     */
-    public BattleRoyal(int obstacles, int numHouse, int numTree, int numPlayers, Boolean ranked, double time, Map map) {
-        super(numPlayers, ranked, time);
+    public BattleRoyal(Map map, int numPlayers, Boolean ranked, double time, int obstacles, int numHouse, int numTree) {
+        super(map, numPlayers, ranked, time);
         
         this.obstacles = obstacles;
         this.numHouse = numHouse;
@@ -38,9 +38,9 @@ public class BattleRoyal extends GameMode {
     public String toString() {
         String builder = super.toString();
 
-        builder += "there are " + this.obstacles + " obstacles , ";
-        builder += "there are " + this.numHouse + " houses , ";
-        builder += "there are " + this.numTree + " trees , ";
+        builder += "There are " + this.obstacles + " obstacles , ";
+        builder += "There are " + this.numHouse + " houses , ";
+        builder += "There are " + this.numTree + " trees , ";
         
         return builder;
     }

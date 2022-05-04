@@ -16,7 +16,7 @@ public class GameMode {
     /*
     Constructor
     */
-    public GameMode(int numPlayers, Boolean ranked, double time) {
+    public GameMode(Map map, int numPlayers, Boolean ranked, double time) {
         this.numPlayers = numPlayers;
         this.ranked     = ranked;
         this.time       = time;
@@ -32,7 +32,7 @@ public class GameMode {
     /*
     Methods
     */
-    public void rank () { // If player want to play ranked match or casual (turning ranked mode on and off)
+    public void ChangeRanked () { // If player want to play ranked match or casual (turning ranked mode on and off)
         if (this.ranked) {
             this.ranked = false;
         }

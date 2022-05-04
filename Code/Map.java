@@ -1,3 +1,10 @@
+/**
+* Name: Mohsen Ameli
+* Date: May 2, 2022
+* Description: The map of the game mode, either battle royal
+* or arena.
+*/
+
 public class Map {
     /*
     Attributes

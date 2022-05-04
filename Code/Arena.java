@@ -9,20 +9,23 @@ public class Arena extends GameMode {
     Attributes
     */
     private int round;
+    private int boxes;
 
     /*
     Constructor
     */
-    public Arena(int numPlayers, int round, double time, Boolean ranked, Map map) {
-        super(numPlayers, ranked, time);
+    public Arena(Map map, int numPlayers, Boolean ranked, double time, int round, int boxes) {
+        super(map, numPlayers, ranked, time);
 
         this.round   = round;
+        this.boxes   = boxes;
     }
 
     /*
     Accessors
     */
     public int getRound() {return this.round;}
+    public int getBoxes() {return this.boxes;}
 
     /*
     Methods
@@ -32,6 +35,7 @@ public class Arena extends GameMode {
         String builder = super.toString();
 
         builder += "Round : " + this.round + ", ";
+        builder += "Boxes : " + this.boxes + ", ";
 
         return builder;
     }

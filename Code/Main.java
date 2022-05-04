@@ -14,14 +14,15 @@ public class Main {
         Charecters huxley = new Charecters (50, "Huxley", "Decoy", "Male", 50, "I'm your reflection");
 
         Map snowy = new Map("snowy", "Sweden", 10, -8);
+        Map cozy = new Map("sunny", "Iran", .5, 25);
 
         GameMode [] games = new GameMode[2];
 
-        games[0] = new Arena(3, 5, 10, false, snowy);
-        games[1] = new BattleRoyal(2, 7, 20, 69, true, 20, snowy);
+        games[0] = new Arena(cozy, 3, true, 10, 20, 5);
+        games[1] = new BattleRoyal(snowy, 7, true, 30, 120, 150, 300);
 
         System.out.println(games[0].toString());
         System.out.println();
-        // System.out.println(rankedArena.toString());
+        System.out.println(games[1].toString());
     }
 }
