@@ -11,70 +11,68 @@ public class Shop {
     private String characterSkins;
     private int currency;
     private String gunSkins;
-    private String bundle;
     private String charms;
    
     /*
     Constructor
     */
-  
-    public void Shop (String characterSkins, int currency, String gunSkins, String bundle, String charms) {
+    public Shop (String characterSkins, int currency, String gunSkins, String charms) {
         this.characterSkins = characterSkins;
         this.currency = currency;
         this.gunSkins = gunSkins;
-        this.bundle = bundle;
         this.charms = charms; 
     }
+
     /*
     Accessors
     */
-
     public String getCharacterSkins() {return characterSkins;}
     public int getcurrency() {return currency;}
     public String getGunSkins() {return gunSkins;}
-    public String getBundle() {return bundle;}
     public String getCharms() {return charms;}
     
     /*
     Methods
     */
-    
-    public void buyCurr () { 
-        if (this.currency < 0 && this.currency + 1000) { 
-            this.currency = this.currency + 1000;
-            System.out.println("You cannot buy any thing sorry");
-            System.out.printf("You can buy anything in the store", this.currency);
+    public void buyCurr(int curr) { 
+        if (curr < 0) { 
+            System.out.println("You cannot buy zero currency!");
+            System.out.println("Current balance : " + this.currency);
+        } else {
+            this.currency = curr;
+            System.out.println("Congrats, you now have : " + this.currency + " on your ballance!");
         }
     }
-    public void buySkin () { 
-        if (this.characterSkins < 0 && this.characterSkins + 75) { 
-            this.characterSkins = this.characterSkins + 75;
-            System.out.println("This skin is free");
-            System.out.printf("You can buy any single skin you want", this.characterSkins);
 
+    public void buyCharSkin(String skin, int cost) { 
+        if (this.currency == 0 || cost > this.currency) { 
+            System.out.println("You do not have any money! go buy some NOW!");
+        } else {
+            this.characterSkins = skin;
+            this.currency = this.currency - cost;
+            System.out.println("You have succefully bought " + skin + " for your character!");
+            System.out.println("Current balance : " + this.currency);
+        }
     }
-    public void buyBoundle () { 
-        if (this.bundle < 0 && this.bundle + 150) { 
-            this.bundle = this.bundle + 150;
-            System.out.println("This boundle is free");
-            System.out.printf("You can buy any single boundle", this.characterSkins);
     
-
+    public void buyGunSkin(String gun, int cost) { 
+        if (this.currency == 0 || cost > this.currency) { 
+            System.out.println("You do not have any money! go buy some NOW!");
+        } else {
+            this.gunSkins = gun;
+            this.currency = this.currency - cost;
+            System.out.println("You have succefully bought " + gun + " for your gun!");
+            System.out.println("Current balance : " + this.currency);
+        }
     }
-    public void buygunskins () { 
-        if (this.gunSkins < 0 && this.gunSkins + 45 ) { 
-            this.gunSkins = this.gunSkins + 45;
-            System.out.println("This gun skin is free");
-            System.out.printf("Yu can buy any single gun skin", this.gunSkins); 
     
-    
+    @Override
     public String toString() {
         String builder = "";
 
         builder += "characterskins : " + this.characterSkins + ", ";
         builder += "currency : " + this.currency + ", ";
         builder += "gunskins : " + this.gunSkins + ", ";
-        builder += "bundlee : " + this.bundle + ", ";
         builder += "charms : " + this.charms;
 
         return builder;

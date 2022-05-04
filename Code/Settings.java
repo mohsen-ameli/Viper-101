@@ -4,7 +4,7 @@ public class Settings {
     */
     private int graphics;
     private double audio;
-    private double vSync;
+    private boolean vSync;
     private String language;
     private boolean autoSprint;
 
@@ -20,7 +20,7 @@ public class Settings {
     /*
     Constructor
     */
-    public Settings(int graphics, double audio, double vSync, String language, boolean autoSprint) {
+    public Settings(int graphics, double audio, boolean vSync, String language, boolean autoSprint) {
         this.graphics   = graphics;
         this.audio      = audio;
         this.vSync      = vSync;
@@ -43,14 +43,14 @@ public class Settings {
     */
     public int getGraphics() {return this.graphics;}
     public double getAudio() {return this.audio;}
-    public double getVSync() {return this.vSync;}
+    public boolean getVSync() {return this.vSync;}
     public String getLanguage() {return this.language;}
     public boolean getAutoSprint() {return this.autoSprint;}
 
     /*
     Methods
     */
-    public void chnageSettings(int graphics, double audio, double vSync, String language) {
+    public void chnageSettings(int graphics, double audio, boolean vSync, String language) {
         if (graphics < 0) {
             this.graphics = graphics;
         }

@@ -5,35 +5,34 @@
  */
 
 public class Gun {
-   /*
+    /*
     Attributes
     */
-    private int weaponDamage;
-    private int Ammo;
+    private double weaponDamage;
+    private double ammo;
     private String weaponName;
-    private String Recoil;
-    private int Accuracy;
+    private String recoil;
+    private int accuracy;
    
    /*
     Constructor
     */
-  
-    public Gun(String weaponName, int Ammo, int weaponDamage, String Recoil, int Accuracy ) {
+    public Gun(String weaponName, double ammo, double weaponDamage, String recoil, int accuracy ) {
         this.weaponName = weaponName;
-        this.Ammo = Ammo;
+        this.ammo = ammo;
         this.weaponDamage = weaponDamage;
-        this.Recoil = Recoil;
-        this.Accuracy = Accuracy; 
+        this.recoil = recoil;
+        this.accuracy = accuracy; 
     }
+
     /*
     Accessors
     */
-
     public String getWeaponName() {return weaponName;}
-    public int getAmmo() {return Ammo;}
-    public int getDamage() {return weaponDamage;}
-    public String getRecoil() {return Recoil;}
-    public int getAccuracy() {return Accuracy;}
+    public double getAmmo() {return ammo;}
+    public double getDamage() {return weaponDamage;}
+    public String getRecoil() {return recoil;}
+    public int getAccuracy() {return accuracy;}
     
     /*
     Methods
@@ -42,14 +41,15 @@ public class Gun {
         System.out.println("DIE!"); 
         System.out.println(this.weaponDamage);
     }
+
     public String toString() {
         String builder = "";
 
         builder += "Weapon name : " + this.weaponName + ", ";
-        builder += "Weapon ammo : " + this.Ammo + ", ";
+        builder += "Weapon Ammo : " + this.ammo + ", ";
         builder += "Weapon damage : " + this.weaponDamage + ", ";
-        builder += "Weapon recoil : " + this.Recoil + ", ";
-        builder += "accuracy : " + this.Accuracy;
+        builder += "Weapon Recoil : " + this.recoil + ", ";
+        builder += "Weapn Accuracy : " + this.accuracy;
 
         return builder;
     }
