@@ -1,3 +1,10 @@
+/**
+* Names: Mohsen, Arshia, Zain 
+* Date: May 3, 2022
+* Description: The brains of the system. the core functionality where the dead seeds
+* grow, gloom, and give the fruits of labor.
+*/
+
 public class Main {
     public static void main(String[] args) {
 
@@ -6,15 +13,12 @@ public class Main {
         Charecters valvette = new Charecters (100, "Valvette", "Rage Of Allfather", "Female", 50, "Let your soul stand cool and composed before a million universes");
         Charecters huxley = new Charecters (50, "Huxley", "Decoy", "Male", 50, "I'm your reflection");
 
-        BattleRoyal rankedBR = new BattleRoyal("Snowy", "Sweden", 10, 69, true);
-        Arena rankedArena = new Arena(7, 5, 3, true);
-        Map snowy = new Map("snowy", "Sweden", 10);
         Map snowy = new Map("snowy", "Sweden", 10, -8);
 
         GameMode [] games = new GameMode[2];
 
         games[0] = new Arena(3, 5, 10, false, snowy);
-        // Arena rankedArena = new Arena(7, 5, 3, true);
+        games[1] = new BattleRoyal(2, 7, 20, 69, true, 20, snowy);
 
         System.out.println(games[0].toString());
         System.out.println();

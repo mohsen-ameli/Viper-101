@@ -1,3 +1,10 @@
+/**
+* Name: Mohsen Ameli
+* Date: May 1, 2022
+* Description: The Game Mode with different multiple players, time
+* ranked, and unranked matches.
+*/
+
 public class GameMode {
     /*
     Attributes
