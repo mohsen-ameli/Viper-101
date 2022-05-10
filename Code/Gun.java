@@ -17,6 +17,15 @@ public class Gun {
    /*
     Constructor
     */
+    /**
+     * Plays the specified file taken by the attributes
+     * @param filePath -> the file path to the file that will be played
+     * @param weaponDamage -> The damage the weapon does
+     * @param ammo -> The ammo in the weapon 
+     * @param weaponName -> The name of the weapon
+     * @param recoil -> the recoil in the gun
+     * @param accuracy -> accuracy in the gun  
+     */
     public Gun(String weaponName, double ammo, double weaponDamage, String recoil, int accuracy ) {
         this.weaponName = weaponName;
         this.ammo = ammo;
@@ -37,6 +46,7 @@ public class Gun {
     /*
     Methods
     */
+    // This gives the gun the ability to be able to shoot and if it hits print DIE and the amount of damage the weapon did.
     public void shoot () {
         System.out.println("DIE!"); 
         System.out.println(this.weaponDamage);
