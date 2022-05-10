@@ -23,10 +23,6 @@ public class Shop {
      * @param currency -> this a currency used in the game that allows the user to buy the items in the shop.
      * @param gunSkins -> Thee user can buy and use which gun skin they want. 
      * @param charms -> orniments in a gun 
-     
-     
-     
-     
      */
     public Shop (String characterSkins, int currency, String gunSkins, String charms) {
         this.characterSkins = characterSkins;
