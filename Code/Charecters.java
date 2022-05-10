@@ -4,8 +4,6 @@
  * @author Arshia Akbaripour
  */
 
-import java.util.concurrent.TimeUnit;
-
 public class Charecters {
      /*
     Attributes
