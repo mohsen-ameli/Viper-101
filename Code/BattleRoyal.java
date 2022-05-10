@@ -1,5 +1,5 @@
 /**
-* Name: Mohsen Ameli
+* Name: Arshia Akbaripour
 * Date: May 1, 2022
 * Description: The subclass of Battle Royal where users can make
 * a fantastic and realasitc 2D non-existent map.
