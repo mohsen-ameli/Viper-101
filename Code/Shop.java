@@ -1,6 +1,6 @@
 /**
  * Course: ICS4U1
- * Date: Apr. 28th, 2022
+ * Date: May. 10th, 2022
  * @author Zain Siddiqui
  */
 
@@ -16,6 +16,10 @@ public class Shop {
     /*
     Constructor
     */
+    /**
+     * Plays the specified file taken by the attributes
+     * @param filePath -> the file path to the file that will be played
+     */
     public Shop (String characterSkins, int currency, String gunSkins, String charms) {
         this.characterSkins = characterSkins;
         this.currency = currency;
@@ -34,6 +38,8 @@ public class Shop {
     /*
     Methods
     */
+    // if the currency is less then 0 then the user cannot buy anything
+    // Print whatever value of currency the user has and if it is higher than o then the user can buy thyings.
     public void buyCurr(int curr) { 
         if (curr < 0) { 
             System.out.println("You cannot buy zero currency!");
@@ -43,7 +49,8 @@ public class Shop {
             System.out.println("Congrats, you now have : " + this.currency + " on your ballance!");
         }
     }
-
+    // if the cost is greater than the currency you have then sorry you cannot buy anything
+    // otherwise if you do have enough currency it will be subtracted from the cost and print which skin you have bought and the amount of currency you have left. 
     public void buyCharSkin(String skin, int cost) { 
         if (this.currency == 0 || cost > this.currency) { 
             System.out.println("You do not have any money! go buy some NOW!");
@@ -54,7 +61,8 @@ public class Shop {
             System.out.println("Current balance : " + this.currency);
         }
     }
-    
+    // if the cost is greater than the currency you have then sorry you cannot buy anything
+    // otherwise if you do have enough currency it will be subtracted from the cost and print which gun you have bought and the amount of currency you have left.  
     public void buyGunSkin(String gun, int cost) { 
         if (this.currency == 0 || cost > this.currency) { 
             System.out.println("You do not have any money! go buy some NOW!");
