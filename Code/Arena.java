@@ -14,7 +14,7 @@ public class Arena extends GameMode {
     /*
     Constructor
     */
-    public Arena(Map map, int numPlayers, Boolean ranked, double time, int round, int boxes) {
+    public Arena(Map map, int numPlayers, boolean ranked, double time, int round, int boxes) {
         super(map, numPlayers, ranked, time);
 
         this.round   = round;

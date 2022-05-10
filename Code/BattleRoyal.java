@@ -16,7 +16,7 @@ public class BattleRoyal extends GameMode {
     /*
     Constructor
     */
-    public BattleRoyal(Map map, int numPlayers, Boolean ranked, double time, int obstacles, int numHouse, int numTree) {
+    public BattleRoyal(Map map, int numPlayers, boolean ranked, double time, int obstacles, int numHouse, int numTree) {
         super(map, numPlayers, ranked, time);
         
         this.obstacles = obstacles;
