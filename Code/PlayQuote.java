@@ -1,8 +1,8 @@
 /*
-* Date : May 9th, 2022
-* Description : Plays a quote audio file
-* Author : The internet, edited by Mohsen
-* Sources : 
+* Author: The internet & edited by Mohsen
+* Date: May 9th, 2022
+* Description: Plays a quote audio file
+* Sources: 
 *  - https://www.geeksforgeeks.org/play-audio-file-using-java/
 *  - https://stackoverflow.com/questions/3009908/how-do-i-get-a-sound-files-total-time-in-java
 */
@@ -26,9 +26,8 @@ public class PlayQuote {
       
     AudioInputStream audioInputStream;
   
-    // constructor to initialize streams and clip
     /**
-     * Plays the specified file taken by the attributes
+     * constructor to initialize streams and clip, Plays the specified file taken by the attributes
      * @param filePath -> the file path to the file that will be played
      */
     public PlayQuote(String filePath) {

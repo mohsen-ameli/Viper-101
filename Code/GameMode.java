@@ -1,8 +1,8 @@
 /**
 * Name: Mohsen Ameli
 * Date: May 1, 2022
-* Description: The Game Mode with different multiple players, time
-* ranked, and unranked matches.
+* Description: The superclass called GameMode with different multiple players,
+* time, ranked, and unranked matches.
 */
 
 public class GameMode {
@@ -36,7 +36,7 @@ public class GameMode {
         if (this.ranked) {
             this.ranked = false;
         }
-    }  
+    }
 
     @Override
     public String toString() {

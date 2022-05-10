@@ -1,7 +1,7 @@
 /**
-* Name: Arshia Akbaripour
+* Name: Mohsen Ameli
 * Date: May 1, 2022
-* Description: The subclass of Battle Royal where users can make
+* Description: This is a subclass for GameMode where users can make
 * a fantastic and realasitc 2D non-existent map.
 */
 
@@ -31,9 +31,27 @@ public class BattleRoyal extends GameMode {
     public int getNumHouse() {return this.numHouse;}
     public int getNumTree() {return this.numTree;}
 
+    public void setObstacles(int numObs) {this.obstacles = numObs;}
+
     /*
     Methods
     */
+
+    /**
+     * spawns stuff like obstacles
+     * @param map -> the specified map to spawn things in
+     */
+    public void spawnStuff(Map map) {
+        if (map.getLocation() == "Sahara") {
+            // if the map is in Sahara, then there are no obstacles, since there's just sand
+            this.setObstacles(0);
+        } else if (map.getWeather() == "snowy") {
+            // if the weather is snowy then spawn lots of trees and houses
+            this.numHouse = 120;
+            this.numTree = 130;
+        }
+    }
+
     @Override
     public String toString() {
         String builder = super.toString();
