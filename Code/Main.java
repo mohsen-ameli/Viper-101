@@ -16,16 +16,18 @@ public class Main {
 
         Settings setting = new Settings(4, 10, true, "ENG", true);
 
-        Shop mainShop = new Shop("Edge of heaven", 0, "Forgiven Angel", "Angel");
+        Shop mainShop = new Shop("Peak of heaven", 0, "Forgiven Angel", "Angel");
 
-        Gun [] guns = new Gun[2];
+        Gun [] guns = new Gun[3];
 
         guns[0] = new Gun("AK47", 7.62, 6.9, "butt ton", 1);
         guns[1] = new Gun("M416", 5.56, 4.20, "lil bit", 5);
+        guns[2] = new Gun("Infinity Edge", 15, 25, "holy shit", 95);
+
 
         Charecters [] chars = new Charecters[4];
 
-        chars[0] = new Charecters (100, "white Shadow", "whiteVoid", "Female", 25, "Darkness cannot drive out darkness, only light can do");
+        chars[0] = new Charecters (100, "white Shadow", "whiteVoid", "Male", 25, "Darkness cannot drive out darkness, only light can do");
         chars[1] = new Charecters (80, "aiden", "Phonix", "Male", 50, "What matters most is how well you walk through the fire");
         chars[2] = new Charecters (100, "Valvette", "Rage Of Allfather", "Female", 50, "Let your soul stand cool and composed before a million universes");
         chars[3] = new Charecters (50, "Huxley", "Decoy", "Male", 50, "I'm your reflection");
