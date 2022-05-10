@@ -49,7 +49,7 @@ public class Gun {
         builder += "Weapon Ammo : " + this.ammo + ", ";
         builder += "Weapon damage : " + this.weaponDamage + ", ";
         builder += "Weapon Recoil : " + this.recoil + ", ";
-        builder += "Weapn Accuracy : " + this.accuracy;
+        builder += "Weapon Accuracy : " + this.accuracy;
 
         return builder;
     }

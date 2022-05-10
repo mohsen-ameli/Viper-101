@@ -4,6 +4,8 @@
  * @author Arshia Akbaripour
  */
 
+import java.util.concurrent.TimeUnit;
+
 public class Charecters {
      /*
     Attributes
@@ -38,34 +40,64 @@ public class Charecters {
     public int getArmor() {return this.armor;}
     public String getQuote() {return this.quote;}
 
+    public void setArmor(int armor) {
+        if (armor <= 0) {
+            this.armor = 0;
+        } else {
+            this.armor = armor;
+        }
+    }
+    public void setHealth(int health) {
+        if (health <= 0) {
+            this.health = 0;
+        } else {
+            this.health = health;
+        }
+    }
+
     /*
     Methods
     */
     public void heal () { 
         if (this.health < 100 && this.health + 20 <= 100) { 
-            this.health = this.health + 20;
+            setHealth(this.health + 20);
             System.out.println("Wait a second! im healing");
-            System.out.printf("your health is restored to %f", this.health);
+            System.out.printf("your health is restored to %d \n", this.health);
+        } else {
+            System.out.println("Health is full!");
         }
     } 
     
-    public void armoringUp () { 
-        if (this.armor < 50 && this.armor + 125 <= 50) { 
-            this.armor = this.armor + 25;
+    public void armorUp () { 
+        if (this.armor < 50 && this.armor + 10 <= 50) { 
+            setArmor(this.armor + 10);
             System.out.println("im shot! cover me im armoring up");
-            System.out.printf("your armor is restored to %f", this.armor);
+            System.out.printf("your armor is restored to %d \n", this.armor);
+        } else {
+            System.out.println("Armour already full!");
         }
     } 
 
-    public void useSkill () { 
-        System.out.printf("your Charecters used %f", this.skill);
+    public void useSkill () {
+        // audio file
+        String filePath = "../Quotes/" + this.name + ".wav";
+
+        // typing the characters' quote
+        System.out.printf("your Charecters used %s \n", this.skill);
         System.out.println(this.quote);
 
+        // playing the characters' quote
+        new PlayQuote(filePath);
     }
 
     public void move () {
-
-
+        try {
+            System.out.println("You moved ..");
+            TimeUnit.SECONDS.sleep(2);
+            System.out.println("noice !");
+        } catch (Exception e) {
+            System.out.println("bruh really ?");
+        }
     }
 
     public String toString() {
@@ -74,8 +106,8 @@ public class Charecters {
         builder += "Health : " + this.health + ", ";
         builder += "Name : " + this.name + ", ";
         builder += "Skill : " + this.skill + ", ";
-        builder += "Sex : " + this.sex;
-        builder += "Armor : " + this.armor;
+        builder += "Sex : " + this.sex + ", ";
+        builder += "Armor : " + this.armor + ", ";
         builder += "Quote : " + this.quote;
 
         return builder;

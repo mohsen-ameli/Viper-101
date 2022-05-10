@@ -50,30 +50,70 @@ public class Settings {
     /*
     Methods
     */
-    public void chnageSettings(int graphics, double audio, boolean vSync, String language) {
-        if (graphics < 0) {
+    public void chnageGraphics(int graphics) {
+        if (graphics < 1 || graphics > 5) {
+            System.out.println("Invalid graphics level.");
+        } else {
             this.graphics = graphics;
         }
-        this.audio = audio;
-        this.vSync = vSync;
-        this.language = language;    
+    }
+
+    public void changeAudio (double audio) {
+        if (audio < 0 || audio > 10) {
+            System.out.println("Invalid audio level.");
+        } else {
+            this.audio = audio;
+            System.out.printf("Audio has been set to %s \n", audio);
+        }
+    }
+
+    public void changeVSync () {
+        if (this.vSync == true) {
+            this.vSync = false;
+            System.out.println("vSync is now turned off");
+        } else {
+            this.vSync = true;
+            System.out.println("vSync is now turned on");
+        }
+    }
+
+    public void changeAutoSprint () {
+        if (this.autoSprint == true) {
+            this.autoSprint = false;
+            System.out.println("Auto sprint is now turned off");
+        } else {
+            this.autoSprint = true;
+            System.out.println("Auto sprint is now turned on");
+        }
+    }
+
+    public void changeLanguage (String language) {
+        this.language = language;
+        System.out.printf("The default language is now : %s \n", language);
     }
 
     public void changeControls(String control, String key) {
-        for (int i = 0; i < this.controls.length; i++) {
-            if (this.controls[i] == control.toUpperCase()) {
-                this.controls[i] = key;
-            }
-        }
+        // int control.toUpperCase() =;
+        // System.out.println(this.controls[FORWARD]);
+        // for (int i = 0; i < this.controls.length; i++) {
+        //     if (this.controls[i] == control.toUpperCase()) {
+        //         this.controls[FORWARD] = key;
+        //     }
+        // }
     }
 
     public String toString() {
         String builder = "";
 
-        builder += "Graphics : " + this.graphics + ", ";
-        builder += "Audio : " + this.audio + ", ";
+        builder += "Graphics : " + this.graphics + "/5 , ";
+        builder += "Audio : " + this.audio + "/10.0 , ";
         builder += "vSync : " + this.vSync + ", ";
-        builder += "Language : " + this.language;
+        builder += "Language : " + this.language + ", ";
+        for (int i = 0; i < controls.length; i++) {
+            builder += i + " : " + this.controls[i] + ", ";
+        }
+        
+        builder += "\n";
 
         return builder;
     }

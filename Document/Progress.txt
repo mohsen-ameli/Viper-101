@@ -1,0 +1,23 @@
+ICS4U1-2A
+Designing and Creating a System Assignment (Viper-101)
+Group: Arshia, Mohsen, Zain
+
+Apr 27, 2022 : The group discussed what system we are going to work on and we decided to go with making a simple game called Viper-101. We also talked about different possible classes to make such as character, guns, setting, and game modes. We chose our agile to be Kanban and we divided out our responsibilities to separate the requested timelines and we started our initial writeup.
+
+Apr 28, 2022 : We started working on our UML diagram and finalized it. As well as worked on the Initial writeup and also updated our Kanban board for every person's task.
+We did some simple coding for the game for the first sprint.
+
+Apr 29, 2022 : Based on the interview, we adjusted our UML and also came up with new ideas for our classes. We also fixed our initial writeup mistakes too. 
+
+Apr 30, 2022 and May 1, 2022 : We had a meeting on discord on Apr 30th to talk about our tasks for the game and our codes for each class to set everything until Monday.
+ 
+May 2, 2022 : Arshia was absent but we checked our codes for any mistakes and we also updated our Kanban and Arshia about what happened today. 
+We planned to finish and meet our goals by the end of May 3rd.
+ 
+May 3, 2022 : Finalizing our codes and updating Kanban, initial writeup and UML to be submitted as artifacts before the second sprint.
+
+May 5, 2022 : Based on the second interview, we planned to complete our UML, update Kanban for new tasks, and develop our codes as much as possible. (Having more artifacts as documents such as screenshots from discord calls)
+
+May 7, 2022 and May 8, 2022 : We had a meeting on discord on May 7th to discuss our responsibilities for the game and our codes for each class to set everything until Tuesday. (Making sure we are hitting our goals for the last sprint) 
+
+May 9, 2022 :  we reviewed each other's code to make sure there are no flaws in each class based on our development during passed few days.
