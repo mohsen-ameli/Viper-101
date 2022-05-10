@@ -19,6 +19,14 @@ public class Shop {
     /**
      * Plays the specified file taken by the attributes
      * @param filePath -> the file path to the file that will be played
+     * @param characterSkins -> The user is able to buy and select which character skin they want.
+     * @param currency -> this a currency used in the game that allows the user to buy the items in the shop.
+     * @param gunSkins -> Thee user can buy and use which gun skin they want. 
+     * @param charms -> orniments in a gun 
+     
+     
+     
+     
      */
     public Shop (String characterSkins, int currency, String gunSkins, String charms) {
         this.characterSkins = characterSkins;
