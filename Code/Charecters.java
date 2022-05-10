@@ -4,6 +4,8 @@
  * @author Arshia Akbaripour
  */
 
+import java.util.concurrent.TimeUnit;
+
 public class Charecters {
      /*
     Attributes
@@ -39,14 +41,14 @@ public class Charecters {
     public String getQuote() {return this.quote;}
 
     public void setArmor(int armor) {
-        if (armor < 0 || armor == 0) {
+        if (armor <= 0 || this.armor <= 0) {
             this.armor = 0;
         } else {
             this.armor = armor;
         }
     }
     public void setHealth(int health) {
-        if (health < 0 || health == 0) {
+        if (health <= 0 || this.health <= 0) {
             this.health = 0;
         } else {
             this.health = health;
@@ -58,7 +60,7 @@ public class Charecters {
     */
     public void heal () { 
         if (this.health < 100 && this.health + 20 <= 100) { 
-            this.health = this.health + 20;
+            setHealth(this.health + 20);
             System.out.println("Wait a second! im healing");
             System.out.printf("your health is restored to %d \n", this.health);
         } else {
@@ -66,9 +68,9 @@ public class Charecters {
         }
     } 
     
-    public void armoringUp () { 
+    public void armorUp () { 
         if (this.armor < 50 && this.armor + 25 <= 50) { 
-            this.armor = this.armor + 25;
+            setArmor(this.armor + 25);
             System.out.println("im shot! cover me im armoring up");
             System.out.printf("your armor is restored to %d \n", this.armor);
         } else {
@@ -76,13 +78,20 @@ public class Charecters {
         }
     } 
 
-    public void useSkill () { 
+    public void useSkill () {
+        // audio file
+        // String filePath = "../Quotes/" + this.name + ".wav";
+        String filePath = "../Quotes/lilBirds.wav";
+
+        // typing the characters' quote
         System.out.printf("your Charecters used %s \n", this.skill);
         System.out.println(this.quote);
+
+        // playing the characters' quote
+        new PlayQuote(filePath);
     }
 
     public void move () {
-
 
     }
 
@@ -92,8 +101,8 @@ public class Charecters {
         builder += "Health : " + this.health + ", ";
         builder += "Name : " + this.name + ", ";
         builder += "Skill : " + this.skill + ", ";
-        builder += "Sex : " + this.sex;
-        builder += "Armor : " + this.armor;
+        builder += "Sex : " + this.sex + ", ";
+        builder += "Armor : " + this.armor + ", ";
         builder += "Quote : " + this.quote;
 
         return builder;
