@@ -42,8 +42,11 @@ public class Shop {
     /*
     Methods
     */
-    // if the currency is less then 0 then the user cannot buy anything
-    // Print whatever value of currency the user has and if it is higher than o then the user can buy thyings.
+    /**
+     * if the currency is less then 0 then the user cannot buy anything
+     * Print whatever value of currency the user has and if it is higher than o then the user can buy thyings.
+     * @param curr -> amount of currency to buy
+     */
     public void buyCurr(int curr) { 
         if (curr < 0) { 
             System.out.println("You cannot buy zero currency!");
@@ -53,9 +56,14 @@ public class Shop {
             System.out.println("Congrats, you now have : " + this.currency + " on your ballance!");
         }
     }
-    // if the cost is greater than the currency you have then sorry you cannot buy anything
-    // otherwise if you do have enough currency it will be subtracted from the cost and print which skin you have bought and the amount of currency you have left. 
-    public void buyCharSkin(String skin, int cost) { 
+    /**
+     * if the cost is greater than the currency you have then sorry you cannot buy anything
+     * otherwise if you do have enough currency it will be subtracted from the cost and print 
+     * which skin you have bought and the amount of currency you have left.
+     * @param skin -> the skin the user wants to buy
+     * @param cost -> the cost of the skin
+     */ 
+    public void buyCharSkin(String skin, int cost) {
         if (this.currency == 0 || cost > this.currency) { 
             System.out.println("You do not have any money! go buy some NOW!");
         } else {
@@ -65,13 +73,23 @@ public class Shop {
             System.out.println("Current balance : " + this.currency);
         }
     }
-    // if the cost is greater than the currency you have then sorry you cannot buy anything
-    // otherwise if you do have enough currency it will be subtracted from the cost and print which gun you have bought and the amount of currency you have left.  
-    public void buyGunSkin(String gun, int cost) { 
+
+    /**
+     * if the cost is greater than the currency you have then sorry you cannot buy anything
+     * otherwise if you do have enough currency it will be subtracted from the cost and print 
+     * which gun you have bought and the amount of currency you have left.
+     * @param gun -> the gun that the skin will be bought for
+     * @param cost -> the cost of the gun skin
+     */
+    public void buyGunSkin(int cost, Gun gun) { 
+        // if the gun ammo type is 7.62 then it will have double the price
+        if (gun.getAmmo() == 7.62) {
+            cost = cost * 2;
+        }
         if (this.currency == 0 || cost > this.currency) { 
             System.out.println("You do not have any money! go buy some NOW!");
         } else {
-            this.gunSkins = gun;
+            this.gunSkins = gun.getWeaponName();
             this.currency = this.currency - cost;
             System.out.println("You have succefully bought " + gun + " for your gun!");
             System.out.println("Current balance : " + this.currency);

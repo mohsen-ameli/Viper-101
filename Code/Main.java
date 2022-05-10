@@ -1,13 +1,13 @@
-import java.util.InputMismatchException;
-import java.util.Scanner;
-import java.util.Random;
-
 /**
 * Names: Mohsen, Arshia, Zain 
 * Date: May 9, 2022
 * Description: The brains of the system. the core functionality where the dead seeds
 * grow, gloom, and give the fruits of labor.
 */
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
@@ -49,12 +49,15 @@ public class Main {
 
         // Maps
         Map snowy = new Map("snowy", "Sweden", 10, -8);
-        Map cozy = new Map("sunny", "Iran", .5, 25);
+        Map hot = new Map("sunny", "Sahara", .5, 25);
 
         // GameModes
         GameMode [] games = new GameMode[2];
-        games[0] = new Arena(cozy, 3, true, 10, 20, 5);
+        games[0] = new Arena(hot, 3, true, 10, 20, 5);
         games[1] = new BattleRoyal(snowy, 7, true, 30, 120, 150, 300);
+
+        // spawning obstacles
+        ((BattleRoyal) games[1]).spawnStuff(hot);
 
 
         //////////////// CHOOSING STUFF \\\\\\\\\\\\\\\\
