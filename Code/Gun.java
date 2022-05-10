@@ -40,6 +40,9 @@ public class Gun {
     public void shoot () {
         System.out.println("DIE!"); 
         System.out.println(this.weaponDamage);
+
+        // play audio when changing graphics
+        new PlayQuote("../Quotes/shoot.wav");
     }
 
     public String toString() {
