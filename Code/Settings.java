@@ -1,3 +1,8 @@
+/**
+* Name: Mohsen Ameli
+* Date: May 9, 2022
+* Description: The settings of the whole game including graphics, and audio ...
+*/
 public class Settings {
     /*
     Attributes
@@ -8,6 +13,7 @@ public class Settings {
     private String language;
     private boolean autoSprint;
 
+    // controls
     final int FORWARD = 0;
     final int BACKWARD = 1;
     final int LEFT = 2;
@@ -15,11 +21,20 @@ public class Settings {
     final int CROUCH = 4;
     final int JUMP = 5;
 
+    // variable to store all 6 controls
     private String [] controls = new String[6];
 
     /*
     Constructor
     */
+    /**
+     * The settings of the file
+     * @param graphics -> the graphics of the game
+     * @param audio -> the audio level
+     * @param vSync -> vsync for better graphics
+     * @param language -> language shown in the game
+     * @param autoSprint -> automatic spriniting turned on or off
+     */
     public Settings(int graphics, double audio, boolean vSync, String language, boolean autoSprint) {
         this.graphics   = graphics;
         this.audio      = audio;
@@ -29,6 +44,9 @@ public class Settings {
         setDefaultMovement();
     }
 
+    /**
+     * Filling the default controls variable
+     */
     private void setDefaultMovement() {
         controls[FORWARD] = "W";
         controls[BACKWARD] = "S";
@@ -50,14 +68,25 @@ public class Settings {
     /*
     Methods
     */
+    /**
+     * changing default graphics
+     * @param graphics -> new desired graphics
+     */
     public void chnageGraphics(int graphics) {
         if (graphics < 1 || graphics > 5) {
             System.out.println("Invalid graphics level.");
         } else {
             this.graphics = graphics;
         }
+
+        // play audio when changing graphics
+        new PlayQuote("../Quotes/click.wav");
     }
 
+    /**
+     * changing default audio
+     * @param audio -> new desired audio
+     */
     public void changeAudio (double audio) {
         if (audio < 0 || audio > 10) {
             System.out.println("Invalid audio level.");
@@ -67,6 +96,9 @@ public class Settings {
         }
     }
 
+    /**
+     * changing default vSync to on or off
+     */
     public void changeVSync () {
         if (this.vSync == true) {
             this.vSync = false;
@@ -77,6 +109,9 @@ public class Settings {
         }
     }
 
+    /**
+     * changing default auto sprint to on or off
+     */
     public void changeAutoSprint () {
         if (this.autoSprint == true) {
             this.autoSprint = false;
@@ -87,11 +122,21 @@ public class Settings {
         }
     }
 
+    /**
+     * changing the default language
+     * @param language -> the desired language to change into
+     */
     public void changeLanguage (String language) {
         this.language = language;
         System.out.printf("The default language is now : %s \n", language);
     }
 
+    /**
+     * still incomplete sorry :( but should change the control based on the two
+     * attributes given
+     * @param control -> the control the user wants to change (forward, backward, etc)
+     * @param key -> the desired key to bind the control with
+     */
     public void changeControls(String control, String key) {
         // int control.toUpperCase() =;
         // System.out.println(this.controls[FORWARD]);
@@ -102,6 +147,10 @@ public class Settings {
         // }
     }
 
+    /**
+     * toString method showing all the game settings
+     */
+    @Override
     public String toString() {
         String builder = "";
 

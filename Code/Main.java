@@ -35,7 +35,7 @@ public class Main {
         Shop mainShop = new Shop("Edge of heaven", 0, "Forgiven Angel", "Angel");
 
         // Guns
-        Gun [] guns = new Gun[2];
+        Gun [] guns = new Gun[3];
         guns[0] = new Gun("AK47", 7.62, 6.9, "butt ton", 1);
         guns[1] = new Gun("M416", 5.56, 4.20, "lil bit", 5);
         guns[2] = new Gun("Infinity Edge", 15, 25, "holy shed", 95);
