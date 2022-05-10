@@ -4,6 +4,8 @@
  * @author Arshia Akbaripour
  */
 
+import java.util.concurrent.TimeUnit;
+
 public class Charecters {
      /*
     Attributes
@@ -39,14 +41,14 @@ public class Charecters {
     public String getQuote() {return this.quote;}
 
     public void setArmor(int armor) {
-        if (armor <= 0 || this.armor <= 0) {
+        if (armor <= 0) {
             this.armor = 0;
         } else {
             this.armor = armor;
         }
     }
     public void setHealth(int health) {
-        if (health <= 0 || this.health <= 0) {
+        if (health <= 0) {
             this.health = 0;
         } else {
             this.health = health;
@@ -67,8 +69,8 @@ public class Charecters {
     } 
     
     public void armorUp () { 
-        if (this.armor < 50 && this.armor + 25 <= 50) { 
-            setArmor(this.armor + 25);
+        if (this.armor < 50 && this.armor + 10 <= 50) { 
+            setArmor(this.armor + 10);
             System.out.println("im shot! cover me im armoring up");
             System.out.printf("your armor is restored to %d \n", this.armor);
         } else {
@@ -78,8 +80,7 @@ public class Charecters {
 
     public void useSkill () {
         // audio file
-        // String filePath = "../Quotes/" + this.name + ".wav";
-        String filePath = "../Quotes/lilBirds.wav";
+        String filePath = "../Quotes/" + this.name + ".wav";
 
         // typing the characters' quote
         System.out.printf("your Charecters used %s \n", this.skill);
@@ -90,7 +91,13 @@ public class Charecters {
     }
 
     public void move () {
-
+        try {
+            System.out.println("You moved ..");
+            TimeUnit.SECONDS.sleep(2);
+            System.out.println("noice !");
+        } catch (Exception e) {
+            System.out.println("bruh really ?");
+        }
     }
 
     public String toString() {
