@@ -19,6 +19,7 @@ public class Main {
         int randNum = 0; 
         int action;
         int armor;
+        int map;
         int hp = 1;
         int set_choice;
         int randShoot = 0;
@@ -32,7 +33,7 @@ public class Main {
 
         // Settings and Shop
         Settings setting = new Settings(2, 5, true, "ENG", true);
-        Shop mainShop = new Shop("Edge of heaven", 0, "Forgiven Angel", "Angel");
+        Shop mainShop = new Shop("Edge of heaven", 1000, "Forgiven Angel", "Angel");
 
         // Guns
         Gun [] guns = new Gun[3];
@@ -48,19 +49,17 @@ public class Main {
         chars[3] = new Charecters (50, "Huxley", "Decoy", "Male", 50, "I am your reflection");
 
         // Maps
-        Map snowy = new Map("snowy", "Sweden", 10, -8);
-        Map hot = new Map("sunny", "Sahara", .5, 25);
+        Map [] maps = new Map [2];
+        maps[0] = new Map("Forbidden Lands", "snowy", "Sweden", 10, -8);
+        maps[1] = new Map("Unkown Desert", "sunny", "Sahara", .5, 25);
 
         // GameModes
         GameMode [] games = new GameMode[2];
-        games[0] = new Arena(hot, 3, true, 10, 20, 5);
-        games[1] = new BattleRoyal(snowy, 7, true, 30, 120, 150, 300);
+        games[0] = new Arena(maps[0], 3, true, 10, 20, 5);
+        games[1] = new BattleRoyal(maps[1], 7, true, 30, 120, 150, 300);
 
         // spawning obstacles
-        ((BattleRoyal) games[1]).spawnStuff(hot);
-
-        // decreasing health because of temp
-        hot.tempHealthDecrease(chars[0]);
+        ((BattleRoyal) games[1]).spawnStuff(maps[0]);
 
 
         //////////////// CHOOSING STUFF \\\\\\\\\\\\\\\\
@@ -98,6 +97,20 @@ public class Main {
                     System.out.print("Please choose a game mode : ");
                     mode = in.nextInt() - 1;
 
+                    System.out.println();
+
+                    // choosing a map
+                    for (int i = 0; i < maps.length; i++) {
+                        System.out.println(i+1 + " - " + maps[i].toString());
+                    }
+                    System.out.print("Please choose a map : ");
+                    map = in.nextInt() - 1;
+
+                    System.out.println();
+
+                    // decreasing health because of temp
+                    maps[1].tempHealthDecrease(chars[0]);
+                    
                     exit = true;
 
                 } else if (choice == 2) { // settings
@@ -133,6 +146,28 @@ public class Main {
 
 
                 } else if (choice == 3) { // shop
+                    System.out.print("Please enter (1) to buy currency, (2) buy character skin, (3) buy gun skins : ");
+                    int choiceShop = in.nextInt();
+                    if (choiceShop == 1) {
+                        System.out.print("Please enter an amount to buy : ");
+                        int curr = in.nextInt();
+                        mainShop.buyCurr(curr);
+                    } else if (choiceShop == 2) {
+                        System.out.print("Please enter a character skin to buy : ");
+                        String skin = in.next();
+                        mainShop.buyCharSkin(skin, 250);
+                    } else if (choiceShop == 3) {
+                        for (int i=0; i < guns.length; i++) {
+                            System.out.println(i+1 + " - " + guns[i].getWeaponName());
+                        }
+                        System.out.print("Please enter a gun name to buy a skin for : ");
+                        int gunName = in.nextInt() - 1;
+                        
+                        mainShop.buyGunSkin(150, guns[gunName]);
+                    }
+
+
+
                     System.out.println(mainShop.toString());
                 } else if (choice == 69) { // leaving
                     System.out.println("Bye for now lol");

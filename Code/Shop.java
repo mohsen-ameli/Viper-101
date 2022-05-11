@@ -52,7 +52,7 @@ public class Shop {
             System.out.println("You cannot buy zero currency!");
             System.out.println("Current balance : " + this.currency);
         } else {
-            this.currency = curr;
+            this.currency = this.currency + curr;
             System.out.println("Congrats, you now have : " + this.currency + " on your ballance!");
         }
     }
@@ -91,7 +91,7 @@ public class Shop {
         } else {
             this.gunSkins = gun.getWeaponName();
             this.currency = this.currency - cost;
-            System.out.println("You have succefully bought " + gun + " for your gun!");
+            System.out.println("You have succefully bought a skin for your gun!");
             System.out.println("Current balance : " + this.currency);
         }
     }
