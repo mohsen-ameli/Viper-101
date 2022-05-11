@@ -99,7 +99,7 @@ public class Charecters {
         new PlayQuote(filePath);
     }
 
-    public void move () { // if the user wish o move the charecter, it prints two strings delayed by 2 seconds from each other
+    public void move () { // if the user wish to move the charecter, it prints two strings delayed by 2 seconds from each other
         try {
             System.out.println("You moved ..");
             TimeUnit.SECONDS.sleep(2);
