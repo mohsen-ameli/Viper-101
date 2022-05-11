@@ -14,11 +14,13 @@ public class Map {
     private String location;
     private double size;
     private int temp;
+    private String name;
 
     /*
     Constructor
     */
-    public Map(String weather, String location, double size, int temp) {
+    public Map(String name, String weather, String location, double size, int temp) {
+        this.name       = name;
         this.weather    = weather;
         this.location   = location;
         this.size       = size;
@@ -32,6 +34,7 @@ public class Map {
     public String getLocation() {return this.location;}
     public double getSize() {return this.size;}
     public int getTemp() {return this.temp;}
+    public String getName() {return this.name;}
     public void setTemp(int temp) {this.temp = temp; } 
 
     /*
@@ -49,6 +52,7 @@ public class Map {
     public String toString() {
         String builder = "";
 
+        builder += "Name : " + this.name + ", ";
         builder += "Weather : " + this.weather + ", ";
         builder += "Location : " + this.location + ", ";
         builder += "Size : " + this.size + ", ";

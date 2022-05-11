@@ -65,13 +65,6 @@ public class Settings {
     public String getLanguage() {return this.language;}
     public boolean getAutoSprint() {return this.autoSprint;}
 
-    public void setForward(String key) {controls[FORWARD] = key;}
-    public void setBackward(String key) {controls[BACKWARD] = key;}
-    public void setLeft(String key) {controls[LEFT] = key;}
-    public void setRight(String key) {controls[RIGHT] = key;}
-    public void setCrouch(String key) {controls[CROUCH] = key;}
-    public void setJump(String key) {controls[JUMP] = key;}
-
     /*
     Methods
     */
@@ -155,17 +148,17 @@ public class Settings {
         // which key does the user wanna change
         // using appropriate setter
         if (control.equals("forward")) {
-            this.setForward(key);
+            controls[FORWARD] = key;
         } else if (control.equals("backward")) {
-            this.setBackward(key);
+            controls[BACKWARD] = key;
         } else if (control.equals("left")) {
-            this.setLeft(key);
+            controls[LEFT] = key;
         } else if (control.equals("right")) {
-            this.setRight(key);
+            controls[RIGHT] = key;
         } else if (control.equals("crouch")) {
-            this.setCrouch(key);
+            controls[CROUCH] = key;
         } else if (control.equals("jump")) {
-            this.setJump(key);
+            controls[JUMP] = key;
         }
 
         // success msg
