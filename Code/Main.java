@@ -1,6 +1,6 @@
 /**
 * Names: Mohsen, Arshia, Zain 
-* Date: May 9, 2022
+* Date: May 10, 2022
 * Description: The brains of the system. the core functionality where the dead seeds
 * grow, gloom, and give the fruits of labor.
 */
@@ -64,7 +64,7 @@ public class Main {
         System.out.println("Hey there, please choose an option");
         do {
             try {
-                System.out.print("Type 1 to show character, 2 to view settings, 3 to go to shop, and 69 to exit : ");
+                System.out.print("Type (1) to show character, (2) to view settings, (3) to go to shop, and (69) to exit : ");
                 choice = in.nextInt();
 
                 System.out.println();
@@ -99,9 +99,10 @@ public class Main {
 
                 } else if (choice == 2) { // settings
                     System.out.println(setting.toString());
-                    System.out.print("Please choose (1) to chnage graphics, (2) change the audio (3) change the VSync \n(4) to change auto sprinting (5) change the language (6) change the controls : ");
+                    System.out.print("Please choose (1) to chnage graphics, (2) change audio lvls (3) change VSync \n(4) change auto sprinting (5) change the language (6) change controls : ");
 
                     set_choice = in.nextInt();
+                    System.out.println();
 
                     if (set_choice == 1) {
                         System.out.print("Please enter a number (1-5) : ");
@@ -116,16 +117,14 @@ public class Main {
                     } else if (set_choice == 4) {
                         setting.changeAutoSprint();
                     } else if (set_choice == 5) {
-                        in.nextLine();
                         System.out.print("Please enter the new language : ");
-                        String language = in.nextLine();
+                        String language = in.next();
                         setting.changeLanguage(language);
                     } else if (set_choice == 6) {
-                        in.nextLine();
-                        System.out.print("Please type the movement, like forward, backward, left, right, jump, crouch : ");
-                        String control = in.nextLine();
+                        System.out.print("Please type the movement: forward, backward, left, right, jump, crouch : ");
+                        String control = in.next();
                         System.out.print("Please type the key you would like to bind it with : ");
-                        String key = in.nextLine();
+                        String key = in.next();
                         setting.changeControls(control, key);
                     }
 
@@ -159,6 +158,7 @@ public class Main {
 
             System.out.print("Your charcter can (1) move, (2) heal, (3) armour up, and (4) use skill [no dmg guaranteed] : ");
             action = in.nextInt();
+            System.out.println();
 
             if (action == 1) {
                 chars[character].move();
