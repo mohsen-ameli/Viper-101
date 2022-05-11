@@ -1,7 +1,9 @@
 /**
-* Name: Arshia Akbaripour
+ * Course: ICS4U1
+ * Date: Apr. 29th, 2022
+ * @author Arshia Akbaripour
 * Date: May 2, 2022
-* Description: The map of the game mode, either battle royal or arena.
+* Description:game mode class which yyou can choose either battle royal or arena mode to play.
 */
 
 public class Map {
