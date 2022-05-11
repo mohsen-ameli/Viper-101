@@ -65,6 +65,13 @@ public class Settings {
     public String getLanguage() {return this.language;}
     public boolean getAutoSprint() {return this.autoSprint;}
 
+    public void setForward(String key) {controls[FORWARD] = key;}
+    public void setBackward(String key) {controls[BACKWARD] = key;}
+    public void setLeft(String key) {controls[LEFT] = key;}
+    public void setRight(String key) {controls[RIGHT] = key;}
+    public void setCrouch(String key) {controls[CROUCH] = key;}
+    public void setJump(String key) {controls[JUMP] = key;}
+
     /*
     Methods
     */
@@ -73,14 +80,13 @@ public class Settings {
      * @param graphics -> new desired graphics
      */
     public void chnageGraphics(int graphics) {
-        if (graphics < 1 || graphics > 5) {
+        if (graphics < 1 || graphics > 5) { // if user entered invalid graphics level
             System.out.println("Invalid graphics level.");
-        } else {
+        } else { // good job user
             this.graphics = graphics;
+            // play audio when changing graphics
+            new PlayQuote("../Quotes/click.wav");
         }
-
-        // play audio when changing graphics
-        new PlayQuote("../Quotes/click.wav");
     }
 
     /**
@@ -88,11 +94,14 @@ public class Settings {
      * @param audio -> new desired audio
      */
     public void changeAudio (double audio) {
-        if (audio < 0 || audio > 10) {
+        if (audio < 0 || audio > 10) { // if user entered invalid audio level
             System.out.println("Invalid audio level.");
-        } else {
+        } else { // good job user
             this.audio = audio;
             System.out.printf("Audio has been set to %s \n", audio);
+
+            // play audio when changing graphics
+            new PlayQuote("../Quotes/click.wav");
         }
     }
 
@@ -100,10 +109,10 @@ public class Settings {
      * changing default vSync to on or off
      */
     public void changeVSync () {
-        if (this.vSync == true) {
+        if (this.vSync == true) { // vSync set to false if already true
             this.vSync = false;
             System.out.println("vSync is now turned off");
-        } else {
+        } else { // opposite of that
             this.vSync = true;
             System.out.println("vSync is now turned on");
         }
@@ -113,10 +122,10 @@ public class Settings {
      * changing default auto sprint to on or off
      */
     public void changeAutoSprint () {
-        if (this.autoSprint == true) {
+        if (this.autoSprint == true) { // auto sprint set to false if already true
             this.autoSprint = false;
             System.out.println("Auto sprint is now turned off");
-        } else {
+        } else { // opposite of that
             this.autoSprint = true;
             System.out.println("Auto sprint is now turned on");
         }
@@ -128,6 +137,8 @@ public class Settings {
      */
     public void changeLanguage (String language) {
         this.language = language;
+
+        // success msg
         System.out.printf("The default language is now : %s \n", language);
     }
 
@@ -138,13 +149,27 @@ public class Settings {
      * @param key -> the desired key to bind the control with
      */
     public void changeControls(String control, String key) {
-        // int control.toUpperCase() =;
-        // System.out.println(this.controls[FORWARD]);
-        // for (int i = 0; i < this.controls.length; i++) {
-        //     if (this.controls[i] == control.toUpperCase()) {
-        //         this.controls[FORWARD] = key;
-        //     }
-        // }
+        control = control.toLowerCase(); // just making sure everything matches
+        key = key.toUpperCase(); // making sure keys are saved in upper case
+
+        // which key does the user wanna change
+        // using appropriate setter
+        if (control.equals("forward")) {
+            this.setForward(key);
+        } else if (control.equals("backward")) {
+            this.setBackward(key);
+        } else if (control.equals("left")) {
+            this.setLeft(key);
+        } else if (control.equals("right")) {
+            this.setRight(key);
+        } else if (control.equals("crouch")) {
+            this.setCrouch(key);
+        } else if (control.equals("jump")) {
+            this.setJump(key);
+        }
+
+        // success msg
+        System.out.printf("You have bound %s with %s successfully! \n", key, control);
     }
 
     /**
@@ -156,11 +181,18 @@ public class Settings {
 
         builder += "Graphics : " + this.graphics + "/5 , ";
         builder += "Audio : " + this.audio + "/10.0 , ";
-        builder += "vSync : " + this.vSync + ", ";
-        builder += "Language : " + this.language + ", ";
-        for (int i = 0; i < controls.length; i++) {
-            builder += i + " : " + this.controls[i] + ", ";
-        }
+        builder += "vSync : " + (this.vSync? "ON":"OFF") + ", "; // inline if-else to say on or off
+        builder += "Auto Sprint : " + (this.autoSprint? "ON":"OFF") + ", "; 
+        builder += "Language : " + this.language;
+
+        builder += "\n";
+
+        builder += "Forward : " + this.controls[FORWARD] + ", ";
+        builder += "Backward : " + this.controls[BACKWARD] + ", ";
+        builder += "Left : " + this.controls[LEFT] + ", ";
+        builder += "Right : " + this.controls[RIGHT] + ", ";
+        builder += "Crouch : " + this.controls[CROUCH] + ", ";
+        builder += "Jump : " + this.controls[JUMP];
         
         builder += "\n";
 

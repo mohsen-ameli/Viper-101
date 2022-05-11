@@ -7,7 +7,7 @@
 import java.util.concurrent.TimeUnit;
 
 public class Charecters {
-     /*
+    /*
     Attributes
     */
     private int health; // charecter health
@@ -71,7 +71,7 @@ public class Charecters {
         if (this.health < 100 && this.health + 20 <= 100) { // if health is less than 100 and adding up 20 to health is equal or less than 100, user can heal up
             setHealth(this.health + 20);
             System.out.println("Wait a second! im healing");
-            System.out.printf("your health is restored to %d \n", this.health);
+            System.out.printf("your health is restored to %d \n \n", this.health);
         } else {
             System.out.println("Health is full!");
         }
@@ -81,7 +81,7 @@ public class Charecters {
         if (this.armor < 50 && this.armor + 10 <= 50) {  // if armor is less than 50 and adding up 10 to armor is equal or less than 50, user can armor up
             setArmor(this.armor + 10);
             System.out.println("im shot! cover me im armoring up");
-            System.out.printf("your armor is restored to %d \n", this.armor);
+            System.out.printf("your armor is restored to %d \n \n", this.armor);
         } else {
             System.out.println("Armour already full!");
         }
@@ -92,7 +92,7 @@ public class Charecters {
         String filePath = "../Quotes/" + this.name + ".wav";
 
         // typing the characters' quote
-        System.out.printf("your Charecters used %s \n", this.skill);
+        System.out.printf("your Charecters used %s \n \n", this.skill);
         System.out.println(this.quote);
 
         // playing the characters' quote
@@ -103,7 +103,7 @@ public class Charecters {
         try {
             System.out.println("You moved ..");
             TimeUnit.SECONDS.sleep(2);
-            System.out.println("noice !");
+            System.out.println("noice ! \n");
         } catch (Exception e) {
             System.out.println("bruh really ?");
         }
