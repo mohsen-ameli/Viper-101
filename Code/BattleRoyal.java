@@ -1,8 +1,8 @@
 /**
 * Name: Mohsen Ameli
 * Date: May 1, 2022
-* Description: This is a subclass for GameMode where users can make
-* a fantastic and realasitc 2D non-existent map.
+* Description: This is a subclass for GameMode where users can 
+* interact with stuff.
 */
 
 public class BattleRoyal extends GameMode {
