@@ -1,8 +1,8 @@
 /**
 * Name: Mohsen Ameli
 * Date: May 1, 2022
-* Description: This is a subclass for GameMode where users can make
-* a fantastic and realasitc 2D non-existent map.
+* Description: The subclass Battle royal is a game mode with unique attributes 
+* User can change the game mode as he/she wishes
 */
 
 public class BattleRoyal extends GameMode {

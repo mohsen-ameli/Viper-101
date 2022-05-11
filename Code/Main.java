@@ -59,6 +59,9 @@ public class Main {
         // spawning obstacles
         ((BattleRoyal) games[1]).spawnStuff(hot);
 
+        // decreasing health because of temp
+        hot.tempHealthDecrease(chars[0]);
+
 
         //////////////// CHOOSING STUFF \\\\\\\\\\\\\\\\
         System.out.println("Hey there, please choose an option");

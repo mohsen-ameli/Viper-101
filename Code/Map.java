@@ -30,10 +30,20 @@ public class Map {
     public String getLocation() {return this.location;}
     public double getSize() {return this.size;}
     public int getTemp() {return this.temp;}
+    public void setTemp(int temp) {this.temp = temp; } 
 
     /*
     Methods
-    */
+     */
+    public void tempHealthDecrease (Charecters charecter) { 
+        if (this.temp <= 60) { 
+            this.setTemp (charecter.getHealth() - 20);
+            System.out.println("ITS SO HOT OUT HERE");
+            System.out.printf("Your charecter lost HP because of hot weather %d \n", charecter.getHealth());
+
+        } 
+    }
+
     public String toString() {
         String builder = "";
 
