@@ -3,7 +3,7 @@
  * Date: Apr. 25th, 2022
  * @author Arshia Akbaripour
  * Description: The subclass Arena is a game mode with unique attributes 
- * User can chnage the game mode as he/she wishes
+ * User can change the game mode as he/she wishes
  */
 
 public class Arena extends GameMode {
